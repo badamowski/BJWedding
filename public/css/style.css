@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+html { 
+  background: url(../img/background.jpg) no-repeat center fixed;
+  background-size: cover;
+  background-position: 60% 60%;	
+}
+.save-well{
+  text-align: center;
+  margin-top: 2%;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  background-image: linear-gradient(to bottom,#E8E8E8 0,rgba(255, 8, 8, 0) 100%) !important;
+}
+.header-names{
+	font-family: 'neoretrodraw';
+	font-weight: bold;
+	font-size: 50px;
+}
+.header-date{
+	font-family: 'Ostrich Sans';
+	font-weight: bold;
+}
+.header-location{
+	font-family: 'Ostrich Sans';
+	font-weight: bold;
+}
