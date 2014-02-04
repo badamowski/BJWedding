@@ -12,6 +12,7 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-position: 60% 60%;	
+  min-height: 100%;
 }
 .save-well{
   text-align: center;
