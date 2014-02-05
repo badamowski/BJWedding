@@ -4,6 +4,7 @@ body {
   height: 100%;
   width: 100%;
   background-color: rgba(255, 255, 255, 0) !important;
+  -webkit-background-size: 3168px 4752px;
 }
 html { 
   background: url(../img/background.jpg) no-repeat center fixed;
@@ -13,7 +14,6 @@ html {
   -o-background-size: cover;
   background-position: 60% 60%;	
   min-height: 100%;
-  -webkit-font-smoothing: antialiased;
 }
 .save-well{
   text-align: center;
