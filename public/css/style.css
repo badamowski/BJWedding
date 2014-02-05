@@ -13,12 +13,15 @@ html {
   -o-background-size: cover;
   background-position: 60% 60%;	
   min-height: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 .save-well{
   text-align: center;
   margin-top: 2%;
-  background-color: rgba(255, 255, 255, 0.0) !important;
-  background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0.7) 0,rgba(255, 255, 255, 0.3) 100%) !important;
+  background: -webkit-linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0.3)) !important; /*Safari*/
+  background: -o-linear-gradient(bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.3)) !important; /*Opera 11-12*/
+  background: -moz-linear-gradient(bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.3)) !important; /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3)) !important; /*Standard*/
   border-width: 0px !important;
   border-color: rgba(255, 255, 255, 0) !important;
   padding: 0px !important;
@@ -27,7 +30,7 @@ html {
 }
 .header-names{
 	font-family: 'neoretrodraw';
-	font-weight: bold;
+	font-weight: bold !important;
 	font-size: 50px;
 }
 .header-date{
