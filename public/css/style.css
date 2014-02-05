@@ -4,7 +4,6 @@ body {
   height: 100%;
   width: 100%;
   background-color: rgba(255, 255, 255, 0) !important;
-  -webkit-background-size: 1440px 2160px;
 }
 html { 
   background: url(../img/background.jpg) no-repeat center fixed;
