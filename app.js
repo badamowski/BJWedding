@@ -94,6 +94,10 @@ app.configure(function() {
 
 
 app.get('/', function(req, res){
+  res.render('index', { user: req.user });
+});
+
+app.get('/save', function(req, res){
   res.render('save', { user: req.user });
 });
 

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Billy & Jami</title>
+		<link rel="shortcut icon" href="/img/goofy.gif">
+	</head>
+  	<link type="text/css" rel="stylesheet" href="css/style.css">
+  	<link type="text/css" rel="stylesheet" href="css/fonts/neoretrodraw.css">
+  	<link type="text/css" rel="stylesheet" href="css/fonts/upper-east-side.css">
+  	<link type="text/css" rel="stylesheet" href="css/fonts/ostrich-sans.css">
+  	<link type="text/css" rel="stylesheet" href="css/fonts/blackout.css">
+  	<link type="text/css" rel="stylesheet" href="css/fonts/great-vibes.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script src="/js/jquery.countdown.js"></script>
+	<script src="js/bj.js"></script>
+	<body>
+		<div id="body_div">
+			<div class="main-container container">
+				<div class="row">
+					<div class="left-container container col-xs-2">
+						<div class="row">
+							<div class="col-md-6">
+								<a id="details_icon" href="#">
+									<div class="icon-well well">
+										<h2 class="icon"><i class="fa fa-heart"></i></h2>
+										<h4 class="icon_label">Details</h4>
+									</div>
+								</a>
+							</div>	
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<a id="travel_icon" href="#">
+									<div class="icon-well well">
+										<h2 class="icon"><i class="fa fa-plane"></i></h2>
+										<h4 class="icon_label">Travel</h4>
+									</div>
+								</a>
+							</div>	
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<a id="rsvp_icon" href="#">
+									<div class="icon-well well">
+										<h2 class="icon"><i class="fa fa-envelope-o"></i></h2>
+										<h4 class="icon_label">RSVP</h4>
+									</div>
+								</a>
+							</div>	
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<a id="registry_icon" href="#">
+									<div class="icon-well well">
+										<h2 class="icon"><i class="fa fa-gift"></i></h2>
+										<h4 class="icon_label">Registry</h4>
+									</div>
+								</a>
+							</div>	
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<a id="photos_icon" href="#">
+									<div class="icon-well well">
+										<h2 class="icon"><i class="fa fa-camera-retro"></i></h2>
+										<h4 class="icon_label">Photos</h4>
+									</div>
+								</a>
+							</div>	
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<a id="tourney_icon" href="#">
+									<div class="icon-well well">
+										<h2 class="icon"><i class="fa fa-trophy"></i></h2>
+										<h4 class="icon_label">Tourney</h4>
+									</div>
+								</a>
+							</div>	
+						</div>
+					</div>
+					<div class="container col-xs-10">
+						<div class="row">
+							<div class="save-well well col-sm-5  col-sm-offset-3">
+								<h1 class="header-names">Billy & Jami</h1>
+								<h2 class="header-date">August 31, 2014</h2>
+								<p><i class="heart-icon fa fa-heart-o"></i></p>
+								<h3 class="header-location">Des Moines, IA</h3>
+							</div>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+		<% include modals/travel %>
+		<% include modals/details %>
+		<% include modals/photos %>
+		<% include modals/registry %>
+		<% include modals/rsvp %>
+		<% include modals/tourney %>
+	</body>
+</html>
