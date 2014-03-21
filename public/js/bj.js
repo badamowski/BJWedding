@@ -1,5 +1,11 @@
 $(document).ready(function(){
     $('#countdown_div').countdown({date: "August 31, 2014 16:00:00"});
+    $('.carousel').each(function(){
+        $(this).carousel({
+            pause: true,
+            interval: false
+        });
+    });
 
     $('#travel_icon').click(function(){
     	$('#travelModal').modal('show');
@@ -15,12 +21,6 @@ $(document).ready(function(){
     });
     $('#rsvp_icon').click(function(){
     	$('#rsvpModal').modal('show');
-    });
-    $('#social_icon').click(function(){
-    	$('#socialModal').modal('show');
-    });
-    $('#story_icon').click(function(){
-    	$('#storyModal').modal('show');
     });
     $('#tourney_icon').click(function(){
     	$('#tourneyModal').modal('show');
