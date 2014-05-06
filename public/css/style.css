@@ -30,6 +30,10 @@ html {
   background-position: 60% 60%;	
   min-height: 100%;
 }
+hr{
+  margin-top: 0px !important;
+  margin-bottom: 2% !important;
+}
 .main-container{
   margin-left: 0px !important;
 }
@@ -120,4 +124,51 @@ a:hover{
 }
 .left-container{
   margin-top: 20px !important;
+}
+.rsvp_form_container{
+  background: url(../img/stripes.png);
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border:2px solid;
+  border-color: rgba(255, 255, 255, 0.0) !important; 
+  border-radius:10px;
+}
+.rsvp_form_div{
+  width: 96%;
+  height: 96%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding-top: 1%;
+  padding-right: 6%;
+  padding-left: 6%;
+  padding-bottom: 4%;
+  background-color: white;
+}
+.rsvp_names{
+  margin-top: 18%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 45px;
+  font-family: 'Ostrich Sans';
+}
+.rsvp_date{
+  text-align: center;
+  font-family: 'Ostrich Sans';
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 0%;
+}
+.rsvp_stamp{
+  width: 100%;
+} 
+.rsvp_top_row{
+  margin-top: 0%;
+}
+.rsvp_desc_row{
+  margin-top: 1%;
 }

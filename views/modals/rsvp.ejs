@@ -3,10 +3,72 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title" id="myModalLabel">RSVP</h4>
+				<h2 class="header-date">Join Us!</h2>
 			</div>
 			<div class="modal-body">
-				<h3>Coming Soon...</h3>
+				<div class="rsvp_form_container">
+					<div class="rsvp_form_div">
+						<div class="row rsvp_top_row">
+							<div class="col-xs-6">
+								<div class="rsvp_names">Billy & Jami</div>
+								<div class="rsvp_date">August 31, 2014</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="rsvp_stamp"><img src="../img/rsvp.jpg" width="80%" align="right" /></div>
+							</div>
+						</div>
+						<div class="row rsvp_desc_row">
+							<p>You're invited to our wedding celebration! Please RSVP so we can accommodate you.</p>
+							<hr />
+						</div>
+						<div class="row">
+							<div id="rsvp_success" class="alert alert-success" hidden>
+								<i class="fa fa-smile-o"></i> We are so excited you can join us!
+							</div>
+							<div id="rsvp_warning" class="alert alert-warning" hidden>
+								<i class="fa fa-frown-o"></i> We are sad that you cannot join us. Hopefully we can get together another time!
+							</div>
+							<div id="rsvp_error" class="alert alert-danger" hidden>
+								<b>Uh oh!</b> Billy messed up and something didn't work right. Please try again.
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group">
+								<label for="rsvp_options">Will you be able to join us?</label> <br />
+								<div class="btn-group" data-toggle="buttons" id="rsvp_answer">
+								  <label class="btn btn-default">
+								    <input type="radio" name="rsvp_options" id="rsvp_yes" value="rsvp_yes">Of Course!
+								  </label>
+								  <label class="btn btn-default">
+								    <input type="radio" name="rsvp_options" id="rsvp_no" value="rsvp_no">Regretfully Not
+								  </label>
+								</div>
+							</div>
+							<input hidden id="rsvp_attending" value=""/>
+							<div class="form-group">
+							  <label for="rsvp_name">Name</label>
+							  <input type="text" id="rsvp_name" name="rsvp_name" class="form-control" maxlength="256" placeholder="Name">
+							</div>
+							<div class="form-group" id="rsvp_number_div" hidden>
+							  <label for="rsvp_number">Number in Your Party:</label>
+							  <select class="form-control" id="rsvp_number" name="rsvp_number">
+								  <option value="1">1</option>
+								  <option value="2">2</option>
+								  <option value="3">3</option>
+								  <option value="4">4</option>
+								  <option value="5">5</option>
+								  <option value="6">6</option>
+								  <option value="7">7</option>
+								  <option value="8">8</option>
+								  <option value="9">9</option>
+								  <option value="10">10</option>
+								</select>
+							</div>
+							<button class="btn btn-primary btn-lg active disabled" type"submit" id="rsvp_submit"
+								data-loading-text="<i class='fa fa-spinner fa-spin'></i> Sending...">Send RSVP</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

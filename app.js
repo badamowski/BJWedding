@@ -1,75 +1,16 @@
-var express = require('express')
-  , passport = require('passport')
-  , flash = require('connect-flash')
-  , LocalStrategy = require('passport-local').Strategy;
+var express = require('express'),
+  nodemailer = require("nodemailer");
   
+var billyAndJamiEmail = "BillyAndJami@gmail.com";
+var billyEmail = "Billy.Adamowski@gmail.com";
+var jamiEmail = "jlenzzz@gmail.com";
 
-var users = [
-    { id: 1, username: 'admin', password: 'admin', email: 'billy.adamowski@gmail.com' }
-  , { id: 2, username: 'test', password: 'test', email: 'billy.adamowski@gmail.com' }
-];
-
-function findById(id, fn) {
-  var idx = id - 1;
-  if (users[idx]) {
-    fn(null, users[idx]);
-  } else {
-    fn(new Error('User ' + id + ' does not exist'));
-  }
-}
-
-function findByUsername(username, fn) {
-  for (var i = 0, len = users.length; i < len; i++) {
-    var user = users[i];
-    if (user.username === username) {
-      return fn(null, user);
+var transport = nodemailer.createTransport("Gmail",{
+    auth: {
+        user: billyAndJamiEmail,
+        pass: "BJWedding2014"
     }
-  }
-  return fn(null, null);
-}
-
-
-// Passport session setup.
-//   To support persistent login sessions, Passport needs to be able to
-//   serialize users into and deserialize users out of the session.  Typically,
-//   this will be as simple as storing the user ID when serializing, and finding
-//   the user by ID when deserializing.
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
 });
-
-passport.deserializeUser(function(id, done) {
-  findById(id, function (err, user) {
-    done(err, user);
-  });
-});
-
-
-// Use the LocalStrategy within Passport.
-//   Strategies in passport require a `verify` function, which accept
-//   credentials (in this case, a username and password), and invoke a callback
-//   with a user object.  In the real world, this would query a database;
-//   however, in this example we are using a baked-in set of users.
-passport.use(new LocalStrategy(
-  function(username, password, done) {
-    // asynchronous verification, for effect...
-    process.nextTick(function () {
-      
-      // Find the user by username.  If there is no user with the given
-      // username, or the password is not correct, set the user to `false` to
-      // indicate failure and set a flash message.  Otherwise, return the
-      // authenticated `user`.
-      findByUsername(username, function(err, user) {
-        if (err) { return done(err); }
-        if (!user || user.password != password) { return done(null, false, { message: 'Invalid Username and/or Password' }); }
-        return done(null, user);
-      })
-    });
-  }
-));
-
-
-
 
 var app = express();
 
@@ -82,11 +23,6 @@ app.configure(function() {
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.session({ secret: 'ash ketchum' }));
-  app.use(flash());
-  // Initialize Passport!  Also use passport.session() middleware, to support
-  // persistent login sessions (recommended).
-  app.use(passport.initialize());
-  app.use(passport.session());
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
   app.use(express.logger());
@@ -99,6 +35,34 @@ app.get('/', function(req, res){
 
 app.get('/save', function(req, res){
   res.render('save', { user: req.user });
+});
+
+app.post('/rsvp', function(req, res){
+  var rsvp_attending = req.body.rsvp_attending;
+  var rsvp_name = req.body.rsvp_name;
+  var rsvp_number = req.body.rsvp_number;
+
+  var subject = "RSVP from " + rsvp_name + "!";
+  var text = "Name: " + rsvp_name + "\nAttending: " + rsvp_attending;
+  if(rsvp_attending && rsvp_attending == "true"){
+    text += "\nNumber: " + rsvp_number;
+  }
+
+  var mailOptions = {
+    from: billyAndJamiEmail,
+    to: billyAndJamiEmail + ", " + billyEmail,
+    subject: subject,
+    text: text
+  }
+
+  transport.sendMail(mailOptions, function(error, response){
+    if(error){
+      res.statusCode = 500;
+      res.end();
+    }else{
+      res.end();
+    }
+  });
 });
 
 app.listen(8080, function() {
