@@ -50,7 +50,33 @@ app.post('/rsvp', function(req, res){
 
   var mailOptions = {
     from: billyAndJamiEmail,
-    to: billyAndJamiEmail + ", " + billyEmail,
+    to: billyAndJamiEmail + ", " + billyEmail + ", " + jamiEmail,
+    subject: subject,
+    text: text
+  }
+
+  transport.sendMail(mailOptions, function(error, response){
+    if(error){
+      res.statusCode = 500;
+      res.end();
+    }else{
+      res.end();
+    }
+  });
+});
+
+app.post('/tourney', function(req, res){
+  var team_name = req.body.team_name;
+  var player_1 = req.body.player_1;
+  var player_2 = req.body.player_2;
+  var email = req.body.email;
+
+  var subject = "Tourney Sign Up for Team " + team_name + "!";
+  var text = "Team Name: " + team_name + "\nPlayer 1: " + player_1 + "\nPlayer 2: " + player_2+ "\nEmail: " + email;;
+
+  var mailOptions = {
+    from: billyAndJamiEmail,
+    to: billyAndJamiEmail + ", " + billyEmail + ", " + jamiEmail,
     subject: subject,
     text: text
   }

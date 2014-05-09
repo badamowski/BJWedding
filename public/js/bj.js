@@ -26,6 +26,8 @@ $(document).ready(function(){
     	$('#rsvpModal').modal('show');
     });
     $('#tourney_icon').click(function(){
+    	$("#tourney_success").hide();
+    	$("#tourney_error").hide();
     	$('#tourneyModal').modal('show');
     });
 
@@ -93,5 +95,73 @@ $(document).ready(function(){
     		$this.button('reset');
     		$('#rsvp_submit').removeClass('disabled');
   		});
+    });
+
+	$('#tourney_team_name').on('keyup', function(){
+    	quickTourneyValidation();
+    });
+    $('#tourney_player_1').on('keyup', function(){
+    	quickTourneyValidation();
+    });
+    $('#tourney_player_2').on('keyup', function(){
+    	quickTourneyValidation();
+    });
+    $('#tourney_team_email').on('keyup', function(){
+    	quickTourneyValidation();
+    });
+    var quickTourneyValidation = function(){
+    	if($('#tourney_team_name').val() && $('#tourney_team_name').val() != ''
+    		&& $('#tourney_player_1').val() && $('#tourney_player_1').val() != ''
+    		&& $('#tourney_player_2').val() && $('#tourney_player_2').val() != ''
+    		&& $('#tourney_team_email').val() && $('#tourney_team_email').val() != ''){
+    		$('#tourney_submit').removeClass('disabled');
+    	}else{
+    		$('#tourney_submit').addClass('disabled');
+    	}
+    };
+    $('#tourney_submit').click(function(){
+    	var $this = $(this);
+    	$this.button('loading');
+
+    	$('#tourney_submit').addClass('disabled');
+    	$("#tourney_success").hide();
+    	$("#tourney_error").hide();
+
+    	var tourney_data = {
+    		'team_name' : $('#tourney_team_name').val(),
+    		'player_1' : $('#tourney_player_1').val(),
+    		'player_2' : $('#tourney_player_2').val(),
+    		'email' : $('#tourney_team_email').val()
+    	};
+    	$.post(
+    		'./tourney',
+    		tourney_data,
+    		function(data){
+    			$('#tourney_success').show();
+    			$('#tourney_team_name').val('');
+    			$('#tourney_player_1').val('');
+    			$('#tourney_player_2').val('');
+    			$('#tourney_team_email').val('')
+    			$this.button('reset');
+    		})
+    	.fail(function() {
+    		$("#tourney_error").show();
+    		$this.button('reset');
+    		$('#tourney_submit').removeClass('disabled');
+  		});
+    });
+
+    $("#linkToTourney").click(function(e){
+    	e.preventDefault();
+    	$('#rsvpModal').modal('hide');
+    	$("#tourney_success").hide();
+    	$("#tourney_error").hide();
+
+   		$('#tourneyModal').modal('show'); 	
+    });
+
+    $("#contact_us").click(function(e){
+    	e.preventDefault();
+    	$('#contact').modal('show'); 	
     });
 });

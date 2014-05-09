@@ -6,7 +6,58 @@
 				<h2 class="header-date">Bring Your Best</h2>
 			</div>
 			<div class="modal-body">
-				<h3>Coming Soon...</h3>
+				<div class="row">
+					<div class="col-xs-4">
+						<img src="../img/photos/Billiardsheart.jpg" width="100%"/>
+					</div>
+					<div class="col-xs-8">
+						Start sharpening your pool skills because our celebrations are going to include a little pool tournament! Full details are still being worked out but it will be:
+						<br />
+						<ul>
+							<li><b>Very Casual</b> (We aren't pool sharks)</li>
+							<li>Pairs</li>
+							<li>Normal 8-Ball</li>
+							<li>Prizes for the winners!</li>
+						</ul>
+						<p>Even if you are on the fence about participating, just sign up below! I will send out confirmation and more details as the date approaches. You can also come back whenever before the big day and sign up!</p>
+						<p>Also, if you party has more than 2 people, feel free to sign up for multiple entries into the tournament. You can do this by submitting the form below multiple times.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="tourney_form_div">
+							<h3>Team Info</h3>
+							<hr />
+							<div id="tourney_success" class="alert alert-success" hidden>
+								<p>
+									<i class="fa fa-trophy"></i> You better start practicing!
+								</p>
+								<p>
+									<b>Have another pairing?</b> Fill out the form below again for your next entry.
+								</p>
+							</div>
+							<div id="tourney_error" class="alert alert-danger" hidden>
+								<b>Uh oh!</b> Billy messed up and something didn't work right. Please try again.
+							</div>
+							<div class="form-group" width="100%">
+								<label for="tourney_team_name">Team Name</label>
+								<input type="text" id="tourney_team_name" name="tourney_team_name" class="form-control" maxlength="256" placeholder="Team Name">
+							</div>
+							<div class="form-group" width="100%">
+								<label for="tourney_players">Players</label>
+								<input type="text" id="tourney_player_1" name="tourney_player_1" class="form-control" maxlength="256" placeholder="Player Name 1">
+								<br />
+								<input type="text" id="tourney_player_2" name="tourney_player_2" class="form-control" maxlength="256" placeholder="Player Name 2">
+							</div>
+							<div class="form-group" width="100%">
+								<label for="tourney_team_email">Email</label>
+								<input type="email" id="tourney_team_email" name="tourney_team_email" class="form-control" maxlength="256" placeholder="Email">
+							</div>
+							<button class="btn btn-primary btn-lg active disabled" type"submit" id="tourney_submit"
+								data-loading-text="<i class='fa fa-spinner fa-spin'></i> Sending...">Sign us up!</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
