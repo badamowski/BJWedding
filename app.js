@@ -1,16 +1,8 @@
 var express = require('express'),
-  nodemailer = require("nodemailer");
-  
-var billyAndJamiEmail = "BillyAndJami@gmail.com";
-var billyEmail = "Billy.Adamowski@gmail.com";
-var jamiEmail = "jlenzzz@gmail.com";
+  nodemailer = require("nodemailer"),
+  bjProperties = require("../bj_properties");
 
-var transport = nodemailer.createTransport("Gmail",{
-    auth: {
-        user: billyAndJamiEmail,
-        pass: "BJWedding2014"
-    }
-});
+var transport = nodemailer.createTransport("Gmail", bjProperties.emailCredentials);
 
 var app = express();
 
@@ -49,8 +41,8 @@ app.post('/rsvp', function(req, res){
   }
 
   var mailOptions = {
-    from: billyAndJamiEmail,
-    to: billyAndJamiEmail + ", " + billyEmail + ", " + jamiEmail,
+    from: bjProperties.fromEmail,
+    to: bjProperties.rsvpEmails.join(","),
     subject: subject,
     text: text
   }
@@ -75,8 +67,8 @@ app.post('/tourney', function(req, res){
   var text = "Team Name: " + team_name + "\nPlayer 1: " + player_1 + "\nPlayer 2: " + player_2+ "\nEmail: " + email;;
 
   var mailOptions = {
-    from: billyAndJamiEmail,
-    to: billyAndJamiEmail + ", " + billyEmail + ", " + jamiEmail,
+    from: bjProperties.fromEmail,
+    to: bjProperties.rsvpEmails.join(","),
     subject: subject,
     text: text
   }
