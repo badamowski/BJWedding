@@ -22,11 +22,15 @@ app.configure(function() {
 
 
 app.get('/', function(req, res){
-  res.render('index', { user: req.user });
+  res.render('post', { user: req.user });
 });
 
 app.get('/save', function(req, res){
   res.render('save', { user: req.user });
+});
+
+app.get('/full', function(req, res){
+  res.render('index', { user: req.user });
 });
 
 app.post('/rsvp', function(req, res){

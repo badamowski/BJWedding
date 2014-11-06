@@ -1,0 +1,190 @@
+@font-face {
+  font-family: Mohave;
+  src: url("fonts/Mohave.otf") format("opentype");
+}
+@font-face {
+  font-family: HVD_Bodedo;
+  src: url("fonts/HVD_Bodedo.ttf") format("opentype");
+}
+@font-face {
+  font-family: Slimbo;
+  src: url("fonts/Slimbo.otf") format("opentype");
+}
+@font-face {
+  font-family: Slimbo_bold;
+  src: url("fonts/Slimbo_bold.otf") format("opentype");
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+html { 
+  background: url(../img/postBackground.jpg) no-repeat center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: 60% 60%;	
+  min-height: 100%;
+}
+hr{
+  margin-top: 0px !important;
+  margin-bottom: 2% !important;
+}
+.main-container{
+  margin-left: 0px !important;
+}
+.save-well{
+  text-align: center;
+  margin-top: 20px;
+  background: -webkit-linear-gradient(top,rgba(255,255,255,0.7),rgba(255,255,255,0.3)) !important; /*Safari*/
+  background: -o-linear-gradient(bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.3)) !important; /*Opera 11-12*/
+  background: -moz-linear-gradient(bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.3)) !important; /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3)) !important; /*Standard*/
+  border-width: 0px !important;
+  border-color: rgba(255, 255, 255, 0) !important;
+  padding: 0px !important;
+  box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.00),0 0px 0 rgba(255, 255, 255, 0.0) !important;
+  -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.00),0 0px 0 rgba(255, 255, 255, 0.0) !important;
+}
+.header-names{
+  /*
+  Mohave
+	Conv_FiveMinutes.otf
+  HVD_Bodedo
+  Slimbo
+  Slimbo_bold
+  Ostrich Sans
+  Neoretrodraw
+  */
+  font-family: 'Neoretrodraw';
+	font-weight: bold !important;
+	font-size: 50px;
+}
+.header-amp{
+  font-family: 'Ostrich Sans';
+}
+.header-date{
+	font-family: 'Ostrich Sans';
+	font-weight: bold;
+  font-size: 35px;
+}
+.header-location{
+	font-family: 'Ostrich Sans';
+	font-weight: bold;
+  margin-top: 10px;
+}
+.heart-icon{
+  font-size: 30px;
+  color: rgb(199, 0, 0);
+}
+.icon-well{
+  border-radius: 10% !important;
+  text-align: center;
+  margin-top: 0%;
+  margin-bottom: 5px !important;
+  padding: 0% !important;
+  background: -webkit-linear-gradient(top,rgba(255,255,255,0.5),rgba(255,255,255,0.5)) !important; /*Safari*/
+  background: -o-linear-gradient(bottom,rgba(255,255,255,0.5),rgba(255,255,255,0.5)) !important; /*Opera 11-12*/
+  background: -moz-linear-gradient(bottom,rgba(255,255,255,0.5),rgba(255,255,255,0.5)) !important; /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.5)) !important; /*Standard*/
+  border-width: 1px !important;
+  border-color: rgba(255, 255, 255, 0.7) !important;
+  box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.00),0 0px 0 rgba(255, 255, 255, 0.0) !important;
+  -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.00),0 0px 0 rgba(255, 255, 255, 0.0) !important;
+  color: rgb(0, 0, 0);
+}
+.icon-well:hover{
+  color: rgb(199, 0, 0);
+}
+a:hover{
+  color: rgb(199, 0, 0) !important;
+}
+.countdown-well{
+  margin-top: 0px !important;
+  color: black;
+}
+.modal-content{
+  background-color: rgba(255, 255, 255, 0.7) !important; 
+}
+.modal-header{
+  text-align: center;
+}
+.icon{
+  margin-bottom: 0px !important;
+  margin-top: 5px !important;
+}
+.icon_label{
+  margin-bottom: 5px !important;
+  margin-top: 0px !important;
+  font-size: 15px;
+}
+.left-container{
+  margin-top: 20px !important;
+}
+.tourney_form_div{
+  width: 86%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding-top: 1%;
+  padding-right: 6%;
+  padding-left: 6%;
+  padding-bottom: 4%;
+  background-color: white;
+  border:1px solid;
+  border-color: rgba(90, 90, 90, 1.0) !important; 
+  border-radius:10px;
+}
+.rsvp_form_container{
+  background: url(../img/stripes.png);
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border:2px solid;
+  border-color: rgba(255, 255, 255, 0.0) !important; 
+  border-radius:10px;
+}
+.rsvp_form_div{
+  width: 96%;
+  height: 96%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding-top: 1%;
+  padding-right: 6%;
+  padding-left: 6%;
+  padding-bottom: 4%;
+  background-color: white;
+}
+.rsvp_names{
+  margin-top: 18%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 45px;
+  font-family: 'Ostrich Sans';
+}
+.rsvp_date{
+  text-align: center;
+  font-family: 'Ostrich Sans';
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 0%;
+}
+.rsvp_stamp{
+  width: 100%;
+} 
+.rsvp_top_row{
+  margin-top: 0%;
+}
+.rsvp_desc_row{
+  margin-top: 1%;
+}
